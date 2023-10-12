@@ -5,16 +5,14 @@ import asyncio
 import random
 
 
-async def wait_random(max_delay=10):
+async def wait_random(max_delay: int = 10) -> float:
     """
-    asynchronous function that waits
-    for a random amount of time
+    Asynchronous function that waits for a random amount of time
 
     Args:
-        max_delay (int): the upper bound for the
-                         random number
+        max_delay (int): the upper bound for the random number
 
-    Return:
+    Returns:
         wait (float): random number between 0 and max_delay
     """
 

@@ -4,7 +4,7 @@ Basic Annotations - concat
 """
 
 
-def add(str1: str, str2: str) -> str:
+def concat(str1: str, str2: str) -> str:
     """
     type-annotated function concat
 

@@ -12,7 +12,7 @@ def floor(n: float) -> int:
 
     Args:
         n (float): number to find floor of
-        
+
     Returns:
         sum (float): floor of n
     """

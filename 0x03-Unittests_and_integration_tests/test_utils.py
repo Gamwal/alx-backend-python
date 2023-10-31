@@ -15,11 +15,11 @@ class TestAccessNestedMap(unittest.TestCase):
     Test Class that performs 3 tests on access_nested_map
     """
     @parameterized.expand([
-        ("Test 1", {"a": 1}, ("a",), 1),
-        ("Test 2", {"a": {"b": 2}}, ("a",), {"b": 2}),
-        ("Test 3", {"a": {"b": 2}}, ("a", "b"), 2),
+        ({"a": 1}, ("a",), 1),
+        ({"a": {"b": 2}}, ("a",), {"b": 2}),
+        ({"a": {"b": 2}}, ("a", "b"), 2),
         ])
-    def test_access_nested_map(self, name: str, nested_map: Mapping,
+    def test_access_nested_map(self, nested_map: Mapping,
                                path: Sequence, expected: Any) -> None:
         """
         function that tests access_nested_map.
@@ -27,10 +27,10 @@ class TestAccessNestedMap(unittest.TestCase):
         self.assertEqual(access_nested_map(nested_map, path), expected)
 
     @parameterized.expand([
-        ("Test 1", {}, ("a",)),
-        ("Test 2", {"a": 1}, ("a", "b")),
+        ({}, ("a",)),
+        ({"a": 1}, ("a", "b")),
         ])
-    def test_access_nested_map_exception(self, name: str, nested_map: Mapping,
+    def test_access_nested_map_exception(self, nested_map: Mapping,
                                          path: Sequence) -> None:
         """
         function that tests access_nested_map for exceptions
@@ -44,11 +44,11 @@ class TestGetJson(unittest.TestCase):
     Test Class
     """
     @parameterized.expand([
-        ("Test1", "http://example.com", {"payload": True}),
-        ("Test2", "http://holberton.io", {"payload": False}),
+        ("http://example.com", {"payload": True}),
+        ("http://holberton.io", {"payload": False}),
     ])
     @patch('requests.get')
-    def test_get_json(self, name, test_url, test_payload, mock_get):
+    def test_get_json(self, test_url, test_payload, mock_get):
         """
         function that tests get_json
         """

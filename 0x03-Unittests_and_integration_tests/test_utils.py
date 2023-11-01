@@ -59,10 +59,20 @@ class TestGetJson(unittest.TestCase):
 
 
 class TestClass:
+    """
+    TestClass copied from exercise
+    """
     def a_method(self):
+        """
+        Arbitrary method that returns 42
+        """
         return 42
+
     @memoize
     def a_property(self):
+        """
+        Method to execute a_method on instance
+        """
         return self.a_method()
 
 
